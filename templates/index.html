@@ -14,29 +14,24 @@
 
 <body>
 
-    <div class="overlay">
-        <div class="form-container">
-            <h2>Faça seu pedido</h2>
+    <div class="form-reserva">
 
-            <form method="POST" action="/enviar_pedido">
+        <div class="cont-inputs">
+            <label for="inpt-nome">Nome:</label>
+            <input type="text" name="nome" id="input_nome">
 
-                <input type="text" name="nome" placeholder="Seu nome" required>
+            <label for="inpt-tel">Telefone:</label>
+            <input type="tel" name="tel" id="input_telefone">
 
-                <input type="tel" name="telefone" placeholder="Telefone" required>
 
-                <select name="produto" required>
-                    <option value="">Selecione</option>
-                    <option>Frango Assado</option>
-                    <option>Costela</option>
-                </select>
 
-                <input type="date" name="data" required>
 
-                <button type="submit">Enviar Pedido</button>
-
-            </form>
         </div>
+
+
     </div>
+
+
 
 </body>
 </html>

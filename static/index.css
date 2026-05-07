@@ -5,7 +5,7 @@ body {
 
     background: url("/static/img/fundo.png") no-repeat center center;
     background-size: cover;
-    height: 150%;
+    height: 300%;
 }
 
 /* 🧊 Camada por cima do fundo (melhora leitura) */

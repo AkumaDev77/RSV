@@ -110,20 +110,17 @@
 
     const horario = document.getElementById('input_horario');
 
-    horario.addEventListener('change', () => {
+        horario.addEventListener('change', () => {
 
-        const valor = horario.value;
+            const valor = horario.value;
 
-        // Se estiver vazio, não valida
-        if (!valor) return;
+            if (valor < '11:00' || valor > '13:00') {
 
-        if (valor < '11:00' || valor > '13:00') {
+                alert('Escolha um horário entre 11:00 e 13:00');
 
-            alert('Escolha um horário entre 11:00 e 13:00');
-
-            horario.value = '';
-        }
-    });
+                horario.value = '';
+            }
+        });
 
     // Executa ao carregar
     window.onload = carregarReserva;

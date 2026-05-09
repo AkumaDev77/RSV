@@ -32,26 +32,56 @@ def valid():
 
 
 
-# @home_route.route('/insert_finpATIVOS', methods=['POST'])
-# def insert_finpativos():
-#     try:
-#         dados = request.json
-#         print("Dados recebidos:", dados)
-#         # Extrai mês e ano da data_comp e data_deb
 
-#         # Insere os dados na tabela finp_ativos
-#         response = supabase.table("finp_ativos").insert({
-#             "ticket": dados['ticket'],
-#             "ativo": dados['ativo'],
-#             "tipo": dados['tipoativo'],
-#             "segmento": dados['segmento'],
-#             "cotacao": dados['cotacao'],
-#             "carteira": dados['switchTexto']
-#         }).execute()
-#         print("Dados enviados para inserção:", dados)
-#         return jsonify({"message": "Cadastro realizado com sucesso!", "data": response.data}), 201
 
-#     except Exception as e:
-#         return jsonify({"error": str(e)}), 500
+
+
+@home_route.route('/reservar', methods=['POST'])
+def reservar():
+
+    try:
+
+        dados = request.get_json()
+
+        print("Dados recebidos:", dados)
+
+        nome = dados.get('nome')
+        telefone = dados.get('telefone')
+        horario = dados.get('horario')
+        produto = dados.get('prod')
+        qtd = dados.get('qtd')
+        obs = dados.get('obs')
+
+        # Validação
+        if not nome or not telefone or not horario or not produto or not qtd:
+
+            return jsonify({
+                "error": "Campos obrigatórios não preenchidos."
+            }), 400
+
+        # Insert no Supabase
+        response = supabase.table("rsv_031assados").insert({
+            "nome": nome,
+            "telefone": telefone,
+            "previsao": horario,
+            "produto": produto,
+            "qtd": qtd,
+            "observacao": obs
+        }).execute()
+
+        print("Reserva salva com sucesso!")
+
+        return jsonify({
+            "message": "Reserva realizada com sucesso!",
+            "data": response.data
+        }), 201
+
+    except Exception as e:
+
+        print("Erro:", e)
+
+        return jsonify({
+            "error": str(e)
+        }), 500
 
 

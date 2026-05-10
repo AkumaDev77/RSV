@@ -51,6 +51,7 @@ def reservar():
         produto = dados.get('prod')
         qtd = dados.get('qtd')
         obs = dados.get('obs')
+        data = dados.get('data')
 
         # Validação
         if not nome or not telefone or not horario or not produto or not qtd:
@@ -66,6 +67,7 @@ def reservar():
             "previsao": horario,
             "produto": produto,
             "qtd": qtd,
+            "data": data,
             "observacao": obs
         }).execute()
 

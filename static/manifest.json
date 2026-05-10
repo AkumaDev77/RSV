@@ -1,6 +1,6 @@
 {
-    "name": "031 Assados",
-    "short_name": "031 Assados",
+    "name": "031 Assados Rsv",
+    "short_name": "031 Assados Rsv",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",
@@ -8,12 +8,12 @@
     "orientation": "portrait",
     "icons": [
         {
-            "src": "/static/icon-192.png",
+            "src": "/static/logo.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/static/icon-512.png",
+            "src": "/static/logo.png",
             "sizes": "512x512",
             "type": "image/png"
         }

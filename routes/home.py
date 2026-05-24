@@ -53,6 +53,12 @@ def reservar():
         obs = dados.get('obs')
         data = dados.get('data')
 
+                # Converter data
+        data_convertida = datetime.strptime(
+            data,
+            "%d/%m/%Y"
+        ).strftime("%Y-%m-%d")
+
         # Validação
         if not nome or not telefone or not horario or not produto or not qtd:
 
@@ -67,7 +73,7 @@ def reservar():
             "previsao": horario,
             "produto": produto,
             "qtd": qtd,
-            "data": data,
+            "data": data_convertida,
             "observacao": obs
         }).execute()
 

@@ -59,7 +59,7 @@ def reservar():
         ).strftime("%Y-%m-%d")
 
         # Validação
-        if not nome or not telefone or not horario or not produto or not qtd:
+        if not nome or not telefone or not produto or not qtd:
 
             return jsonify({
                 "error": "Campos obrigatórios não preenchidos."

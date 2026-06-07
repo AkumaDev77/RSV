@@ -36,8 +36,8 @@
             <label for="inpt-tel">Telefone:</label>
             <input type="tel" name="tel" id="input_telefone">
 
-            <label for="inpt-horario">Horario:</label>
-            <input type="time" name="tel" id="input_horario" min="11:00" max="13:00">
+            <!-- <label for="inpt-horario">Horario:</label>
+            <input type="time" name="tel" id="input_horario" min="11:00" max="13:00"> -->
 
             <label for="inpt-prod">Produto:</label>
             <input type="text" name="prod" id="input_prod" value="Frango Assado" disabled>
@@ -105,7 +105,7 @@
 
         const nome = document.getElementById('input_nome').value.trim();
         const telefone = document.getElementById('input_telefone').value.trim();
-        const horario = document.getElementById('input_horario').value.trim();
+        //const horario = document.getElementById('input_horario').value.trim();
         const qtd = document.getElementById('input_qtd').value.trim();
         const prod = document.getElementById('input_prod').value.trim();
         const data = document.getElementById('data-rsv').innerText.trim();
@@ -114,7 +114,7 @@
         const obs = document.getElementById('input_obs')?.value.trim();
 
         // Validação
-        if (!nome || !telefone || !horario || !qtd) {
+        if (!nome || !telefone || !qtd) {
 
             Swal.fire({
                 icon: 'warning',

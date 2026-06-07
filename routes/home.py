@@ -47,7 +47,6 @@ def reservar():
 
         nome = dados.get('nome')
         telefone = dados.get('telefone')
-        horario = dados.get('horario')
         produto = dados.get('prod')
         qtd = dados.get('qtd')
         obs = dados.get('obs')
@@ -70,7 +69,7 @@ def reservar():
         response = supabase.table("rsv_031assados").insert({
             "nome": nome,
             "telefone": telefone,
-            "previsao": horario,
+            "previsao": '',
             "produto": produto,
             "qtd": qtd,
             "data": data_convertida,

@@ -69,7 +69,6 @@ def reservar():
         response = supabase.table("rsv_031assados").insert({
             "nome": nome,
             "telefone": telefone,
-            "previsao": '',
             "produto": produto,
             "qtd": qtd,
             "data": data_convertida,
@@ -90,5 +89,3 @@ def reservar():
         return jsonify({
             "error": str(e)
         }), 500
-
-
